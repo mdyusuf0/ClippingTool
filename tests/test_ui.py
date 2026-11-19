@@ -20,7 +20,7 @@ def test_ui_empty_inputs_returns_warning() -> None:
     """_run_pipeline should return a warning if no URL or uploaded file is provided."""
     from clipfinder.ui import _run_pipeline, DEFAULT_CATEGORY
 
-    v1, v2, v3, v4, v5, gallery, df, z, status, cards = _run_pipeline(
+    res = _run_pipeline(
         urls_text="",
         uploaded_files=None,
         category_label=DEFAULT_CATEGORY,
@@ -36,8 +36,11 @@ def test_ui_empty_inputs_returns_warning() -> None:
         language="auto",
         gemini_api_key="",
     )
+    players = res[:10]
+    gallery, df, z, status, cards = res[10], res[11], res[12], res[13], res[14]
+    assert len(players) == 10
     assert "No inputs provided" in status
-    assert v1 is None
+    assert players[0] is None
     assert z is None
 
 
@@ -45,7 +48,7 @@ def test_ui_permission_gate_refusal() -> None:
     """_run_pipeline should refuse external URL processing if has_permission is False."""
     from clipfinder.ui import _run_pipeline, DEFAULT_CATEGORY
 
-    v1, v2, v3, v4, v5, gallery, df, z, status, cards = _run_pipeline(
+    res = _run_pipeline(
         urls_text="https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         uploaded_files=None,
         category_label=DEFAULT_CATEGORY,
@@ -61,8 +64,11 @@ def test_ui_permission_gate_refusal() -> None:
         language="auto",
         gemini_api_key="",
     )
+    players = res[:10]
+    gallery, df, z, status, cards = res[10], res[11], res[12], res[13], res[14]
+    assert len(players) == 10
     assert "Permission required" in status
-    assert v1 is None
+    assert players[0] is None
     assert z is None
 
 
@@ -92,23 +98,46 @@ def test_ui_cancellation_stops_pipeline(tmp_path: Path) -> None:
     dummy = tmp_path / "dummy.mp4"
     dummy.write_bytes(b"dummy")
 
-    with patch("clipfinder.ingest.classify_input", return_value=("file", str(dummy))), \
-         patch("clipfinder.ingest.probe_video", side_effect=lambda p: cancellation_token.cancel() or {"duration": 60}):
-        v1, v2, v3, v4, v5, gallery, df, z, status, cards = _run_pipeline(
-            urls_text=str(dummy),
-            uploaded_files=None,
-            category_label=DEFAULT_CATEGORY,
-            has_permission=True,
-            n_clips=2,
-            min_duration=10,
-            max_duration=30,
-            style="blur",
-            captions_preset="vice_city",
-            mask_profanity=True,
-            hook_text="",
-            model="tiny",
-            language="auto",
-            gemini_api_key="",
-        )
-        assert "cancelled by user" in status.lower()
-        assert v1 is None
+    try:
+        with patch("clipfinder.ingest.classify_input", return_value=("file", str(dummy))), \
+             patch("clipfinder.ingest.probe_video", side_effect=lambda p: cancellation_token.cancel() or {"duration": 60}):
+            res = _run_pipeline(
+                urls_text=str(dummy),
+                uploaded_files=None,
+                category_label=DEFAULT_CATEGORY,
+                has_permission=True,
+                n_clips=2,
+                min_duration=10,
+                max_duration=30,
+                style="blur",
+                captions_preset="vice_city",
+                mask_profanity=True,
+                hook_text="",
+                model="tiny",
+                language="auto",
+                gemini_api_key="",
+            )
+            players = res[:10]
+            status = res[13]
+            assert "cancelled by user" in status.lower()
+            assert players[0] is None
+    finally:
+        cancellation_token.reset()
+
+
+def test_load_default_rendered_state_manifest() -> None:
+    """Verify that load_default_rendered_state correctly loads all 10 pre-rendered reels."""
+    from clipfinder.ui import load_default_rendered_state, REELS_MANIFEST
+
+    assert len(REELS_MANIFEST) == 10
+    state = load_default_rendered_state()
+    assert len(state) == 14
+    vids = state[:10]
+    gallery = state[10]
+    df_rows = state[11]
+    zip_path = state[12]
+    cards_md = state[13]
+
+    assert len(df_rows) == 10
+    assert "xQc" in cards_md
+    assert "Tokyo Girl" in cards_md

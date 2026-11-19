@@ -97,6 +97,267 @@ def _load_yaml_config() -> dict[str, Any]:
                 logger.warning("Failed loading %s: %s", p, exc)
     return {}
 
+
+# ---------------------------------------------------------------------------
+# Pre-rendered 9:16 Viral Reels Manifest & Resolvers
+# ---------------------------------------------------------------------------
+
+REELS_MANIFEST: list[dict[str, Any]] = [
+    {
+        "id": "reel_01",
+        "title": "xQc Haunted Radio Demon Glitch",
+        "filename": "GTA6_Glitch_xQc_RadioDemon_Reel.mp4",
+        "thumb": "GTA6_Glitch_xQc_RadioDemon_Reel_thumb.jpg",
+        "category": "Creator Glitches & Reactions",
+        "hook": "Radio: 'No son! LOOK AWAY!' 💀",
+        "audio": "Original xQc Voice + Radio Glitch + Vine Boom & Bruh SFX",
+        "caption": "xQc found a cursed radio demon in GTA 6 💀 Bro was fighting for his life!",
+        "tags": "#GTA6 #GTA6Glitch #xQc #GamingMemes #Shorts #TikTok",
+    },
+    {
+        "id": "reel_02",
+        "title": "Speed KFC & Keanu Reeves Glitch",
+        "filename": "GTA6_Glitch_Speed_KFC_Keanu_Reel.mp4",
+        "thumb": "GTA6_Glitch_Speed_KFC_Keanu_Reel_thumb.jpg",
+        "category": "Creator Glitches & Reactions",
+        "hook": "Speed: 'WAIT... THAT'S KFC?! NO! THAT'S KEANU REEVES!' 🍗",
+        "audio": "Original Speed Voice + Vine Boom & Bruh SFX",
+        "caption": "SPEED FOUND KEANU REEVES AND A KFC BUCKET IN GTA 6 😭 Rockstar explain this!",
+        "tags": "#IShowSpeed #Speed #GTA6 #GTA6Memes #KeanuReeves #Shorts",
+    },
+    {
+        "id": "reel_03",
+        "title": "IShowSpeed Tokyo Girl Hype",
+        "filename": "GTA6_TokyoGirl_Speed_Hype_Reel.mp4",
+        "thumb": "GTA6_TokyoGirl_Speed_Hype_Reel_thumb.jpg",
+        "category": "GTA 6 Memes & Hype",
+        "hook": "SPEED'S REACTION TO GTA 6 IS PRICELESS 💀",
+        "audio": "Song: Tokyo Girl by @PassiveBand",
+        "caption": "Tokyo Girl hits different with Speed's GTA 6 hype 🔥 Song: Tokyo Girl by @PassiveBand",
+        "tags": "#GTA6 #TokyoGirl #IShowSpeed #GTA6Hype #ViralReel",
+    },
+    {
+        "id": "reel_04",
+        "title": "IShowSpeed Trailer & Lucia Lore",
+        "filename": "GTA6_TokyoGirl_Speed_Story_Reel.mp4",
+        "thumb": "GTA6_TokyoGirl_Speed_Story_Reel_thumb.jpg",
+        "category": "Story, Dialogue & Reactions",
+        "hook": "WHEN THE GTA 6 TRAILER HIT DIFFERENT 🔥",
+        "audio": "Song: Tokyo Girl by @PassiveBand",
+        "caption": "Waiting for GTA 6 feels like an eternity 😭 Song: Tokyo Girl by @PassiveBand",
+        "tags": "#GTA6 #TokyoGirl #IShowSpeed #Lucia #ViceCity",
+    },
+    {
+        "id": "reel_05",
+        "title": "CarryMinati Arrest & Lucia Reveal",
+        "filename": "GTA6_TokyoGirl_Carry_Arrest_Reel.mp4",
+        "thumb": "GTA6_TokyoGirl_Carry_Arrest_Reel_thumb.jpg",
+        "category": "Action & Story",
+        "hook": "CARRYMINATI CAN'T BELIEVE GTA 6 GRAPHICS 🤯",
+        "audio": "Song: Tokyo Girl by @PassiveBand",
+        "caption": "Vice City police aren't playing around 🚔 Song: Tokyo Girl by @PassiveBand",
+        "tags": "#GTA6 #TokyoGirl #CarryMinati #ViceCity #GamingReels",
+    },
+    {
+        "id": "reel_06",
+        "title": "CarryMinati Vice City Cruising",
+        "filename": "GTA6_TokyoGirl_Carry_ViceCity_Reel.mp4",
+        "thumb": "GTA6_TokyoGirl_Carry_ViceCity_Reel_thumb.jpg",
+        "category": "Vehicles & Vice City Views",
+        "hook": "VICE CITY AT NIGHT WITH CARRYMINATI 🌴",
+        "audio": "Song: Tokyo Girl by @PassiveBand",
+        "caption": "Night drives through Vice City hit different 🌙 Song: Tokyo Girl by @PassiveBand",
+        "tags": "#GTA6 #TokyoGirl #CarryMinati #ViceCityVibes #Reels",
+    },
+    {
+        "id": "reel_07",
+        "title": "Vice City Beach Sunset Cinematic",
+        "filename": "GTA6_TokyoGirl_Landscape_Sunset_Reel.mp4",
+        "thumb": "GTA6_TokyoGirl_Landscape_Sunset_Reel_thumb.jpg",
+        "category": "Atmosphere & Scenery",
+        "hook": "VICE CITY SUNSET IS PURE POETRY 🌅",
+        "audio": "Song: Tokyo Girl by @PassiveBand",
+        "caption": "Some cities look like heaven from far away... 🌅 Song: Tokyo Girl by @PassiveBand",
+        "tags": "#GTA6 #TokyoGirl #ViceCity #GTA6Cinematic #Aesthetic",
+    },
+    {
+        "id": "reel_08",
+        "title": "Jason & Lucia 'Trust' Relationship Edit",
+        "filename": "GTA6_TokyoGirl_JasonLucia_Trust_Reel.mp4",
+        "thumb": "GTA6_TokyoGirl_JasonLucia_Trust_Reel_thumb.jpg",
+        "category": "Jason & Lucia Relationship Edit",
+        "hook": "THE ONLY WAY WE'RE GONNA GET THROUGH THIS... TRUST. ❤️",
+        "audio": "Song: Tokyo Girl by @PassiveBand",
+        "caption": "Partners in crime. The only way we get through this is trust. ❤️ Song: Tokyo Girl by @PassiveBand",
+        "tags": "#GTA6 #TokyoGirl #JasonAndLucia #PartnersInCrime #StoryMode",
+    },
+    {
+        "id": "reel_09",
+        "title": "Lucia Prison Bad Luck Lore Edit",
+        "filename": "GTA6_TokyoGirl_Lucia_Prison_Reel.mp4",
+        "thumb": "GTA6_TokyoGirl_Lucia_Prison_Reel_thumb.jpg",
+        "category": "Dramatic & Emotional Lore",
+        "hook": "BAD LUCK, I GUESS... LUCIA'S STORY BEGINS ⛓️",
+        "audio": "Song: Tokyo Girl by @PassiveBand",
+        "caption": "How did Lucia end up in prison? Bad luck, I guess... ⛓️ Song: Tokyo Girl by @PassiveBand",
+        "tags": "#GTA6 #TokyoGirl #Lucia #GTA6Lore #Leonida",
+    },
+    {
+        "id": "reel_10",
+        "title": "Vice City Ocean Drive Neon Nights",
+        "filename": "GTA6_TokyoGirl_ViceCity_NeonNights_Reel.mp4",
+        "thumb": "GTA6_TokyoGirl_ViceCity_NeonNights_Reel_thumb.jpg",
+        "category": "Atmosphere & Scenery",
+        "hook": "NEON NIGHTS IN LEONIDA 🌴🏎️",
+        "audio": "Song: Tokyo Girl by @PassiveBand",
+        "caption": "Welcome back to Vice City. 2026 can't come fast enough! 🌴 Song: Tokyo Girl by @PassiveBand",
+        "tags": "#GTA6 #TokyoGirl #Leonida #ViceCityNights #GamingEdit",
+    },
+]
+
+
+def resolve_reel_path(filename: str) -> str | None:
+    """Find reel file on Desktop or inside repository rendered_reels."""
+    candidates = [
+        Path.home() / "Desktop" / filename,
+        _ROOT_DIR / "rendered_reels" / filename,
+        Path("rendered_reels") / filename,
+    ]
+    for c in candidates:
+        if c.exists() and c.is_file():
+            return str(c.resolve())
+    return None
+
+
+def resolve_thumb_path(thumb_name: str, vid_path: str | None = None) -> str | None:
+    """Find thumbnail on Desktop or local repository, extracting from video if needed."""
+    candidates = [
+        Path.home() / "Desktop" / "thumbnails" / thumb_name,
+        _ROOT_DIR / "rendered_reels" / "thumbnails" / thumb_name,
+        Path("rendered_reels/thumbnails") / thumb_name,
+        Path.home() / "Desktop" / thumb_name,
+    ]
+    for c in candidates:
+        if c.exists() and c.is_file():
+            return str(c.resolve())
+
+    # Fallback: extract frame using ffmpeg
+    if vid_path and Path(vid_path).exists():
+        out_thumb = _ROOT_DIR / "rendered_reels" / "thumbnails" / thumb_name
+        out_thumb.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            import subprocess
+            subprocess.run(
+                ["ffmpeg", "-y", "-ss", "2.0", "-i", str(vid_path), "-vframes", "1", "-q:v", "2", str(out_thumb)],
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+            if out_thumb.exists():
+                return str(out_thumb.resolve())
+        except Exception:
+            pass
+    return None
+
+
+def load_default_rendered_state() -> tuple[
+    str | None,
+    str | None,
+    str | None,
+    str | None,
+    str | None,
+    str | None,
+    str | None,
+    str | None,
+    str | None,
+    str | None,
+    list[tuple[str, str]],
+    list[list[Any]],
+    str | None,
+    str,
+]:
+    """Scan and load the 10 rendered reels with thumbnails, players, table and package."""
+    vids: list[str | None] = []
+    gallery_items: list[tuple[str, str]] = []
+    df_rows: list[list[Any]] = []
+    cards_parts: list[str] = [
+        "### 🎬 Rendered 9:16 Vertical Video Outputs (10 Viral Reels Showcase)\n\n"
+        "> **All reels are rendered in full-bleed 1080×1920 portrait format with burned-in subtitles & audio loudness mastering.**\n"
+    ]
+
+    for idx, item in enumerate(REELS_MANIFEST, 1):
+        v_path = resolve_reel_path(item["filename"])
+        t_path = resolve_thumb_path(item["thumb"], v_path)
+        vids.append(v_path)
+
+        display_thumb = t_path if t_path else (v_path or "")
+        if display_thumb:
+            gallery_items.append((display_thumb, f"Reel #{idx:02d}: {item['title']}"))
+
+        df_rows.append([
+            f"Reel #{idx:02d}",
+            item["title"],
+            item["category"],
+            item["audio"],
+            item["hook"],
+            item["tags"],
+        ])
+
+        cards_parts.append(
+            f"#### Reel #{idx:02d}: {item['title']} (1080×1920 Full Bleed)\n"
+            f"- **Category:** `{item['category']}`\n"
+            f"- **Audio / Soundtrack:** {item['audio']}\n"
+            f"- **Hook / Punchline:** *{item['hook']}*\n"
+            f"- **Ready-to-Post Caption:** `{item['caption']}`\n"
+            f"- **Hashtags:** `{item['tags']}`\n"
+            f"- **File Location:** `{v_path if v_path else 'Not yet found on Desktop or local'}`\n"
+        )
+
+    cards_md = "\n".join(cards_parts)
+
+    # Check or create zip package
+    zip_candidates = [
+        _ROOT_DIR / "rendered_reels" / "GTA6_ALL_REELS_PACKAGE.zip",
+        Path("rendered_reels/GTA6_ALL_REELS_PACKAGE.zip"),
+    ]
+    zip_res: str | None = None
+    for z in zip_candidates:
+        if z.exists():
+            zip_res = str(z.resolve())
+            break
+
+    # If missing but reels exist, generate it
+    if not zip_res:
+        valid_vids = [p for p in vids if p and Path(p).exists()]
+        if valid_vids:
+            try:
+                import zipfile
+                out_zip = _ROOT_DIR / "rendered_reels" / "GTA6_ALL_REELS_PACKAGE.zip"
+                out_zip.parent.mkdir(parents=True, exist_ok=True)
+                with zipfile.ZipFile(out_zip, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+                    for vp in valid_vids:
+                        zf.write(vp, arcname=Path(vp).name)
+                    for item in REELS_MANIFEST:
+                        tp = resolve_thumb_path(item["thumb"])
+                        if tp and Path(tp).exists():
+                            zf.write(tp, arcname=f"thumbnails/{Path(tp).name}")
+                if out_zip.exists():
+                    zip_res = str(out_zip.resolve())
+            except Exception as exc:
+                logger.warning("Could not auto-generate zip: %s", exc)
+
+    while len(vids) < 10:
+        vids.append(None)
+
+    return (
+        vids[0], vids[1], vids[2], vids[3], vids[4],
+        vids[5], vids[6], vids[7], vids[8], vids[9],
+        gallery_items,
+        df_rows,
+        zip_res,
+        cards_md,
+    )
+
 # ---------------------------------------------------------------------------
 # Pipeline Execution
 # ---------------------------------------------------------------------------
@@ -164,7 +425,7 @@ def _run_pipeline(
     except ImportError as exc:
         err = f"Pipeline import error: {exc}"
         logger.error(err)
-        return None, None, None, None, None, [], [], None, f"Error: {err}", ""
+        return (*[None] * 10, [], [], None, f"Error: {err}", "")
 
     try:
         t_start_total = time.time()
@@ -195,7 +456,7 @@ def _run_pipeline(
     
         if not input_lines:
             return (
-                None, None, None, None, None, [], [], None,
+                *[None] * 10, [], [], None,
                 "Notice: No inputs provided. Please enter a video URL or upload a file.",
                 "",
             )
@@ -207,7 +468,7 @@ def _run_pipeline(
         allowed = permission_gate(input_lines, has_permission_flag=has_permission, interactive=False)
         if not allowed:
             return (
-                None, None, None, None, None, [], [], None,
+                *[None] * 10, [], [], None,
                 "Permission required: External URL download requires rights confirmation. "
                 "Please check the permission confirmation box to proceed.",
                 "",
@@ -252,7 +513,7 @@ def _run_pipeline(
     
         if not local_videos:
             return (
-                None, None, None, None, None, [], [], None,
+                *[None] * 10, [], [], None,
                 "Error: Could not resolve or download any video from the provided input(s). "
                 "Please verify the URL or file path.",
                 "",
@@ -427,7 +688,7 @@ def _run_pipeline(
     
         if not rendered_clips_paths:
             return (
-                None, None, None, None, None, [], [], None,
+                *[None] * 10, [], [], None,
                 "Pipeline completed but no clips could be produced. Please check video length and audio.",
                 "",
             )
@@ -465,11 +726,10 @@ def _run_pipeline(
         create_zip(out_dir, zip_path)
     
         # ---- 8. Prepare Return Values ----
-        v1 = rendered_clips_paths[0] if len(rendered_clips_paths) > 0 else None
-        v2 = rendered_clips_paths[1] if len(rendered_clips_paths) > 1 else None
-        v3 = rendered_clips_paths[2] if len(rendered_clips_paths) > 2 else None
-        v4 = rendered_clips_paths[3] if len(rendered_clips_paths) > 3 else None
-        v5 = rendered_clips_paths[4] if len(rendered_clips_paths) > 4 else None
+        v_slots: list[str | None] = [
+            rendered_clips_paths[i] if i < len(rendered_clips_paths) else None
+            for i in range(10)
+        ]
     
         # Gallery items
         gallery_items = [(p, f"Reel #{i+1:02d} — {cat_key.upper()}") for i, p in enumerate(rendered_clips_paths)]
@@ -510,11 +770,11 @@ def _run_pipeline(
             progress(1.0, desc="Finished")
     
         zip_res = str(zip_path) if zip_path.exists() else None
-        return v1, v2, v3, v4, v5, gallery_items, df_rows, zip_res, status_msg, cards_md
+        return v_slots[0], v_slots[1], v_slots[2], v_slots[3], v_slots[4], v_slots[5], v_slots[6], v_slots[7], v_slots[8], v_slots[9], gallery_items, df_rows, zip_res, status_msg, cards_md
     except CancellationError:
         logger.info("Pipeline was cancelled by user.")
         return (
-            None, None, None, None, None, [], [], None,
+            *[None] * 10, [], [], None,
             "Generation cancelled by user. Background tasks stopped.",
             "",
         )
@@ -714,6 +974,25 @@ input:focus, textarea:focus, select:focus {
     transform: translateY(0) !important;
 }
 
+/* Secondary Action Button */
+.btn-secondary-action {
+    background: #171b23 !important;
+    color: #e2e8f0 !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+.btn-secondary-action:hover {
+    background: #1e242f !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+
 /* Terminal Log View */
 .terminal-output textarea {
     font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace !important;
@@ -757,6 +1036,12 @@ def launch_ui(default_config: dict | None = None) -> None:
     # Prepare base64 images
     logo_b64 = _load_asset_b64("gta6_logo.svg")
     cover_b64 = _load_asset_b64("gta6_cover.png")
+
+    (
+        init_v1, init_v2, init_v3, init_v4, init_v5,
+        init_v6, init_v7, init_v8, init_v9, init_v10,
+        init_gallery, init_df, init_zip, init_cards,
+    ) = load_default_rendered_state()
 
     with gr.Blocks(title="Grand Theft Auto VI — Clipping Studio") as demo:
         # ---- Minimalist Studio Header ----
@@ -933,40 +1218,72 @@ def launch_ui(default_config: dict | None = None) -> None:
             # Tab 2: Rendered Reels & Exports
             # ------------------------------------------------------------------
             with gr.Tab("Rendered Reels & Exports"):
-                gr.Markdown("<div class='section-label'>Rendered 9:16 Vertical Video Output</div>")
-
-                # Video Players Row
                 with gr.Row():
-                    player_1 = gr.Video(label="Reel 1", interactive=False, height=440)
-                    player_2 = gr.Video(label="Reel 2", interactive=False, height=440)
-                    player_3 = gr.Video(label="Reel 3", interactive=False, height=440)
+                    gr.Markdown(
+                        "<div class='section-label'>Rendered 9:16 Vertical Video Output (Desktop & Local Exports)</div>"
+                    )
+                    refresh_reels_btn = gr.Button(
+                        "🔄 Rescan Desktop / Local Reels",
+                        size="sm",
+                        elem_classes=["btn-secondary-action"],
+                    )
+
+                # Video Players Grid (Reels 1 to 10)
+                with gr.Row():
+                    player_1 = gr.Video(value=init_v1, label="Reel 1: xQc Radio Glitch (9:16)", interactive=False, height=440)
+                    player_2 = gr.Video(value=init_v2, label="Reel 2: Speed KFC & Keanu (9:16)", interactive=False, height=440)
+                    player_3 = gr.Video(value=init_v3, label="Reel 3: Speed Tokyo Girl Hype (9:16)", interactive=False, height=440)
 
                 with gr.Row():
-                    player_4 = gr.Video(label="Reel 4", interactive=False, height=440)
-                    player_5 = gr.Video(label="Reel 5", interactive=False, height=440)
+                    player_4 = gr.Video(value=init_v4, label="Reel 4: Speed Trailer Lore (9:16)", interactive=False, height=440)
+                    player_5 = gr.Video(value=init_v5, label="Reel 5: CarryMinati Arrest (9:16)", interactive=False, height=440)
+                    player_6 = gr.Video(value=init_v6, label="Reel 6: CarryMinati Cruising (9:16)", interactive=False, height=440)
+
+                with gr.Row():
+                    player_7 = gr.Video(value=init_v7, label="Reel 7: Vice City Sunset (9:16)", interactive=False, height=440)
+                    player_8 = gr.Video(value=init_v8, label="Reel 8: Jason & Lucia Trust (9:16)", interactive=False, height=440)
+                    player_9 = gr.Video(value=init_v9, label="Reel 9: Lucia Prison Lore (9:16)", interactive=False, height=440)
+
+                with gr.Row():
+                    player_10 = gr.Video(value=init_v10, label="Reel 10: Neon Ocean Drive Drift (9:16)", interactive=False, height=440)
 
                 gr.Markdown("<div class='section-label'>Complete Archive Download</div>")
                 zip_file_output = gr.File(
-                    label="Download ZIP Package (All MP4 Clips, SRT Subtitles, CSV & Markdown Summary)"
+                    value=init_zip,
+                    label="Download Complete Package (.ZIP with 10 MP4 Clips, Thumbnails & Captions)",
                 )
 
-                cards_markdown = gr.Markdown(label="Clip Metadata & Suggested Copy")
+                cards_markdown = gr.Markdown(
+                    value=init_cards,
+                    label="Clip Metadata & Suggested Copy",
+                )
 
-                with gr.Accordion("Full Extraction Analytics Table", open=False):
+                with gr.Accordion("Full Extraction Analytics & Moments Gallery", open=True):
                     clips_gallery = gr.Gallery(
-                        label="Moments Gallery",
-                        columns=3,
+                        value=init_gallery,
+                        label="Moments & Thumbnails Gallery (Click to Inspect)",
+                        columns=5,
                         height="auto",
                         object_fit="contain",
                     )
                     clips_table = gr.Dataframe(
+                        value=init_df,
                         headers=[
-                            "Filename", "Start", "End", "Duration",
-                            "Score", "Title", "Hashtags",
+                            "Reel", "Title", "Category", "Audio / Soundtrack", "Hook", "Hashtags",
                         ],
                         interactive=False,
                         wrap=True,
                     )
+
+                refresh_reels_btn.click(
+                    fn=load_default_rendered_state,
+                    inputs=None,
+                    outputs=[
+                        player_1, player_2, player_3, player_4, player_5,
+                        player_6, player_7, player_8, player_9, player_10,
+                        clips_gallery, clips_table, zip_file_output, cards_markdown,
+                    ],
+                )
 
         # Wire Submit Callback
         def on_generate(
@@ -1038,6 +1355,11 @@ def launch_ui(default_config: dict | None = None) -> None:
                 player_3,
                 player_4,
                 player_5,
+                player_6,
+                player_7,
+                player_8,
+                player_9,
+                player_10,
                 clips_gallery,
                 clips_table,
                 zip_file_output,

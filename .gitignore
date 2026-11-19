@@ -11,6 +11,8 @@ htmlcov/
 # Outputs & Temp
 output/
 output_*/
+temp_*/
+temp_*.*
 *.log
 *.tmp
 test_*.mp4

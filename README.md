@@ -60,6 +60,23 @@ Open **`http://127.0.0.1:7860`** in your browser to start clipping!
 
 ---
 
+## 🎬 Pre-loaded Viral Reels Showcase (Ready to Play in UI)
+
+The repository comes packaged with **10 pre-rendered viral 9:16 vertical reels** in `rendered_reels/` with matching high-resolution thumbnails in `rendered_reels/thumbnails/`.
+
+When you launch the studio (`python main.py --ui`), open the **Rendered Reels & Exports** tab to immediately preview, play, and copy social captions:
+- 📻 **Reel 1**: `xQc Haunted Radio Glitch` — Dynamic webcam & gameplay stack with Vine Boom & Bruh SFX.
+- 🍗 **Reel 2**: `Speed KFC & Keanu Reeves Glitch` — Reaction stack with KFC character & Keanu punchlines.
+- ⚡ **Reels 3 & 4**: `IShowSpeed Tokyo Girl Hype & Lore Edits` — High-energy trailer hype edits.
+- 🚔 **Reels 5 & 6**: `CarryMinati Arrest & Vice City Night Cruising` — Carry reaction & Vice City cruising edits.
+- 🌅 **Reels 7 & 10**: `Vice City Beach Sunset & Ocean Drive Neon Drift` — 9:16 full-bleed cinematic landscape & neon drive.
+- ❤️ **Reel 8**: `Jason & Lucia "Trust" Relationship Edit` — Cinematic couple lore & story edit.
+- ⛓️ **Reel 9**: `Lucia Prison Bad Luck Lore Edit` — Lucia origin story edit.
+
+Includes ready-to-copy Instagram/TikTok captions, hashtag sets, and 1-click package download.
+
+---
+
 ## 💻 Command Line (CLI) Usage
 
 Prefer the terminal? Run ClippingTool headlessly:
