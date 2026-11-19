@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest / Caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Outputs & Temp
+output/
+output_*/
+*.log
+*.tmp
+test_*.mp4
+*.zip
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

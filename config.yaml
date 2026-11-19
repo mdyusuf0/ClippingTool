@@ -1,0 +1,273 @@
+# ClipFinder default configuration
+# Override any value via CLI flags or --config path
+
+defaults:
+  clips: 5
+  min: 15
+  max: 45
+  style: blur        # blur | crop | facecrop
+  captions: bold     # bold | pop | minimal
+  model: base        # tiny | base | small | medium | large-v2
+  language: auto     # auto | en | es | fr | hi | ar | ...
+  output: output/
+  crf: 20
+  preset: veryfast     # ffmpeg x264 preset (veryfast recommended for speed without loss of quality at crf 20)
+  audio_bitrate: 192k
+  target_lufs: -14
+  live_duration: 2.0  # default minutes to capture for live broadcasts
+
+presets:
+  # GTA 6 & Gaming Categories
+  funny:
+    hook_words:
+      - lmao
+      - lol
+      - wtf
+      - no way
+      - bro what
+      - glitch
+      - bug
+      - fail
+      - wasted
+      - hilarious
+      - cooked
+      - goofy
+      - npc
+      - look at this
+      - ragdoll
+      - clowned
+      - karma
+    min: 15
+    max: 40
+    captions: pop
+    scoring_weights:
+      loudness: 0.20
+      speech_rate: 0.20
+      hook_word: 0.35
+      punctuation: 0.20
+      scene_change: 0.05
+
+  serious:
+    hook_words:
+      - trust
+      - listen
+      - matter of fact
+      - we have to
+      - choice
+      - money
+      - deal
+      - police
+      - lucia
+      - jason
+      - vice city
+      - truth
+      - promise
+      - plan
+      - leonida
+      - survive
+    min: 20
+    max: 60
+    captions: bold
+    scoring_weights:
+      loudness: 0.10
+      speech_rate: 0.35
+      hook_word: 0.30
+      punctuation: 0.15
+      scene_change: 0.10
+
+  sad:
+    hook_words:
+      - im sorry
+      - why
+      - lost
+      - goodbye
+      - cant believe
+      - over
+      - done
+      - dead
+      - died
+      - pain
+      - hurt
+      - broke
+      - left me
+      - betray
+      - alone
+      - miss
+    min: 15
+    max: 45
+    captions: minimal
+    scoring_weights:
+      loudness: 0.15
+      speech_rate: 0.25
+      hook_word: 0.40
+      punctuation: 0.15
+      scene_change: 0.05
+
+  action:
+    hook_words:
+      - shoot
+      - fire
+      - rpg
+      - tank
+      - police
+      - swat
+      - run
+      - cover
+      - helicopter
+      - grenade
+      - dead
+      - got him
+      - headshot
+      - insane
+      - let's go
+      - mayhem
+    min: 15
+    max: 45
+    captions: pop
+    scoring_weights:
+      loudness: 0.35
+      speech_rate: 0.10
+      hook_word: 0.20
+      punctuation: 0.10
+      scene_change: 0.25
+
+  chases:
+    hook_words:
+      - chase
+      - floor it
+      - drive
+      - cops
+      - lost them
+      - drift
+      - speed
+      - supercar
+      - roadblock
+      - turn left
+      - jump
+      - escape
+      - ram
+    min: 15
+    max: 50
+    captions: pop
+    scoring_weights:
+      loudness: 0.30
+      speech_rate: 0.10
+      hook_word: 0.20
+      punctuation: 0.10
+      scene_change: 0.30
+
+  cinematic:
+    hook_words:
+      - vice city
+      - ocean drive
+      - sunset
+      - neon
+      - view
+      - unreal
+      - graphics
+      - beautiful
+      - soundtrack
+      - radio
+      - miami
+      - vibe
+      - cruising
+    min: 20
+    max: 60
+    captions: bold
+    scoring_weights:
+      loudness: 0.20
+      speech_rate: 0.15
+      hook_word: 0.30
+      punctuation: 0.10
+      scene_change: 0.25
+
+  stunts:
+    hook_words:
+      - no way
+      - watch this
+      - stunt
+      - jump
+      - impossible
+      - holy shit
+      - omg
+      - did you see that
+      - flip
+      - ramp
+      - physics
+    min: 15
+    max: 45
+    captions: pop
+    scoring_weights:
+      loudness: 0.30
+      speech_rate: 0.20
+      hook_word: 0.30
+      punctuation: 0.15
+      scene_change: 0.05
+
+  gaming:
+    hook_words:
+      - clutch
+      - insane
+      - let's go
+      - no way
+      - gg
+      - broken
+      - nerf
+      - buff
+      - op
+      - one shot
+      - combo
+      - poggers
+      - incredible
+    min: 20
+    max: 50
+    captions: pop
+
+  podcast:
+    hook_words:
+      - actually
+      - the truth is
+      - here's why
+      - you need to know
+      - most people don't
+      - the real reason
+      - what nobody tells you
+      - I realized
+      - game changer
+      - changed my mind
+    min: 30
+    max: 60
+    captions: bold
+
+  general:
+    hook_words:
+      - you won't believe
+      - wait for it
+      - insane
+      - crazy
+      - shocking
+      - must know
+      - life changing
+      - the secret
+      - no one talks about
+      - mistake everyone makes
+      - this is why
+      - you need to see this
+      - incredible
+      - never do this
+    min: 15
+    max: 45
+    captions: bold
+
+scoring_weights:
+  loudness: 0.25
+  speech_rate: 0.20
+  hook_word: 0.20
+  punctuation: 0.15
+  scene_change: 0.20
+
+scene_change_threshold: 0.3
+vad_filter: true
+word_timestamps: true
+chunk_hours: 2.5
+cache_transcripts: true

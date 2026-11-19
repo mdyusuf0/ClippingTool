@@ -1,0 +1,1 @@
+"""ClipFinder package."""
